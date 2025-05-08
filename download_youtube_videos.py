@@ -1,9 +1,5 @@
 import yt_dlp
-import cv2
-import random
-import os
-
-import yt_dlp
+# import opencv
 import cv2
 import random
 import os
@@ -32,6 +28,44 @@ def download_youtube_videos(url, output_dir, quality='best'):
     
     print(f"\nDownloaded {len(video_paths)} video(s)")
     return video_paths
+
+base_dir = "output directory"
+youtube_url = "https://www.youtube.com/watch?v=QQTujE5qb_U&list=PLLGT0cEMIAzeq_YFR_iHm831-GuOWlwUJ&index=2"
+num_frames = 240
+frame_scale = 3.0  # Increase this to make frames bigger (1.0 = original size)
+video_quality = 'best'  # 'best', 'hd1080', 'hd720', 'medium', 'worst'
+
+# Create directories
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+video_dir = os.path.join(base_dir, "videos", timestamp)
+frames_dir = os.path.join(base_dir, "youtube_frames", timestamp)
+
+try:
+    # Download videos
+    video_paths = download_youtube_videos(youtube_url, video_dir, quality=video_quality)
+    
+    # Process each video
+    '''
+    all_saved_frames = []
+    for video_path in video_paths:
+        if os.path.exists(video_path):  # Only process successfully downloaded videos        
+            saved_frames = extract_random_frames(
+                video_path, 
+                frames_dir, 
+                num_frames=num_frames, 
+                scale_factor=frame_scale
+            )
+            all_saved_frames.extend(saved_frames)
+            '''
+    
+    print("\nProcess completed successfully!")
+    print(f"Videos location: {video_dir}")
+    #print(f"Frames location: {frames_dir}")
+    #print(f"Total frames extracted: {len(all_saved_frames)}")
+    
+except Exception as e:
+    print(f"\nError occurred: {str(e)}")
+
 
 def extract_random_frames(video_path, output_folder, num_frames=10, scale_factor=1.5):
     """Extract random frames from video and save to output folder with optional scaling"""
@@ -73,40 +107,3 @@ def extract_random_frames(video_path, output_folder, num_frames=10, scale_factor
     cap.release()
     print(f"Saved {len(saved_frames)} frames to: {video_output_folder}")
     return saved_frames
-
-
-# Configuration - change these as needed
-base_dir = "C:/Users/super/Downloads/School Work/MUSA 6950/Final"
-youtube_url = "https://www.youtube.com/watch?v=QQTujE5qb_U&list=PLLGT0cEMIAzeq_YFR_iHm831-GuOWlwUJ&index=2"
-num_frames = 240
-frame_scale = 3.0  # Increase this to make frames bigger (1.0 = original size)
-video_quality = 'best'  # 'best', 'hd1080', 'hd720', 'medium', 'worst'
-
-# Create directories
-timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-video_dir = os.path.join(base_dir, "videos", timestamp)
-frames_dir = os.path.join(base_dir, "youtube_frames", timestamp)
-
-try:
-    # Download videos
-    video_paths = download_youtube_videos(youtube_url, video_dir, quality=video_quality)
-    
-    # Process each video
-    all_saved_frames = []
-    for video_path in video_paths:
-        if os.path.exists(video_path):  # Only process successfully downloaded videos
-            saved_frames = extract_random_frames(
-                video_path, 
-                frames_dir, 
-                num_frames=num_frames, 
-                scale_factor=frame_scale
-            )
-            all_saved_frames.extend(saved_frames)
-    
-    print("\nProcess completed successfully!")
-    print(f"Videos location: {video_dir}")
-    print(f"Frames location: {frames_dir}")
-    print(f"Total frames extracted: {len(all_saved_frames)}")
-    
-except Exception as e:
-    print(f"\nError occurred: {str(e)}")
