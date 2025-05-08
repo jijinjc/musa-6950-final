@@ -26,7 +26,7 @@ With the csvs, we can finally use the [visualization.ipynb](https://github.com/j
 
 ![Image](https://github.com/user-attachments/assets/4c30019b-6ff0-4d07-a5ee-2baba7649bf2)
 
-Based on our this example provided, we can see that generally the model was able to identify objects quite accurately, but still contains some errors when defining some of the classes. This likely means that changes still need to be made to the model. However, for this level of accuracy, we can look as rudimentary analysis, especially for what we are doing in observing how the urban environment changes.
+Based on our this example provided, it is clear that there are several benefits and limitations of our current model. While we can see that generally the model was able to identify objects quite accurately, there are still some errors when defining some of the classes. This likely means that changes still need to be made to the model. However, for this level of accuracy, we can look at employing in a rudimentary analysis, especially for what we are doing in observing how the urban environment changes.
 
 ![Image](https://github.com/user-attachments/assets/41ecfa1a-20cf-4745-ab5c-4aec7d2ef4c2)
 
@@ -36,6 +36,6 @@ For discussion purposes, I believe that it is important to note several improvem
 
 ## Conclusion
 
-All in all, this was a very interesting project. Through this project, we were able to observe how well a model is able to take an input data from a series of videos, and apply it to other frames in the series. While the model was successful in identifying many of the classes that were labelled, it may be more difficult for us to infer proper data from these data, especially due to the fact that there is a lack of strong connection between the images from the videos and a real life location. While we were able to use broader locations, it was hard to pinpoint exact locations. In the future, the study could benefit from focusing on the connection between images and real-life counterparts, which would make a huge step in being able to use data sources that would otherwise not be feasible as proper data.
+All in all, this was a very interesting project to work on. Through this project, we were able to observe how well a model is able to take an input data from a series of videos, and apply it to other frames in the series. While the model was successful in identifying many of the classes that were labelled, it may be more difficult for us to infer proper data from these data, especially due to the fact that there is a lack of strong connection between the images from the videos and a real life location. While we were able to use broader locations, it was hard to pinpoint exact locations. In the future, the study could benefit from focusing on the connection between images and real-life counterparts, which would make a huge step in being able to use data sources that would otherwise not be feasible as proper data.
 
 
