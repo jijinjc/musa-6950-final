@@ -22,7 +22,20 @@ Therefore, we can also use the [extract_video_frames.py](https://github.com/jiji
 
 With the csvs, we can finally use the [visualization.ipynb](https://github.com/jijinjc/musa-6950-final/blob/main/visualization.ipynb) to complete the visualization process, and have a sense of how the urban environment changes.
 
-## Results
+## Results & Discussion
 
+![Image](https://github.com/user-attachments/assets/4c30019b-6ff0-4d07-a5ee-2baba7649bf2)
+
+Based on our this example provided, we can see that generally the model was able to identify objects quite accurately, but still contains some errors when defining some of the classes. This likely means that changes still need to be made to the model. However, for this level of accuracy, we can look as rudimentary analysis, especially for what we are doing in observing how the urban environment changes.
+
+![Image](https://github.com/user-attachments/assets/41ecfa1a-20cf-4745-ab5c-4aec7d2ef4c2)
+
+From this simple result we can get a simple understanding of how the urban environment composition changed as their distance to the final location Cape Soya in Hokkaido has changed. These values are recorded based on the distance they are to Cape Soya at the end of the day, which is why there an increase from 1514 to 1516km. We can see that generally the building count was the highest in Japan throughout their journey, except for their second day, which saw a lot of cars. Unfortunately, these results do not paint much of a picture, except that we could maybe infer that at 627 km (Day 10) they journeyed past a large city that showed an increase of all classes, or that during the second day they were on the road for a majority of time, which could have been why there were more identified cars than other objects. 
+
+For discussion purposes, I believe that it is important to note several improvements could be made. First of all with the model and the dataset, we could use a stronger more advanced model, such as ResNet 101, or ResNeXt, as well as increase the dataset size. These could make the model stronger in identifying classes more correctly, and with higher accuracy. Additionally, the results could have been greatly affected by the type of datasets that was used. Because the dataset came from videos that was focused more on a journey across the country, it was more difficult to identify urban environments. It may be interesting in the future to focus on a few major cities, and use much more images to create a dataset and eventually help identify which city the images come from, similar to the idea of a reverse 'geoguessr' project.
+
+## Conclusion
+
+All in all, this was a very interesting project. Through this project, we were able to observe how well a model is able to take an input data from a series of videos, and apply it to other frames in the series. While the model was successful in identifying many of the classes that were labelled, it may be more difficult for us to infer proper data from these data, especially due to the fact that there is a lack of strong connection between the images from the videos and a real life location. While we were able to use broader locations, it was hard to pinpoint exact locations. In the future, the study could benefit from focusing on the connection between images and real-life counterparts, which would make a huge step in being able to use data sources that would otherwise not be feasible as proper data.
 
 
